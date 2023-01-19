@@ -1,4 +1,3 @@
-from django.shortcuts import render
 import json
 from rest_framework.views import APIView
 from rest_framework import status
@@ -79,7 +78,6 @@ class ManageUserView(APIView):
         return Response({'message':'You dont have permisssion to delete user'}, status=status.HTTP_400_BAD_REQUEST)
 
     def put(self, request):
-        print('=====================pout========')
         user = request.user
         serializer = self.serializer_class(user, data=request.data) 
         if serializer.is_valid():

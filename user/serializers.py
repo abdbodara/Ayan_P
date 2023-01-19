@@ -3,6 +3,7 @@ from rest_framework import serializers
 from .two_factor import send_authentication_otp
 from django.contrib.auth.hashers import make_password
 
+
 class UserRegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -28,6 +29,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
 
 class VerifyOtpSerializer(serializers.Serializer):
     otp = serializers.IntegerField()
+
 
 class UserRegisterVerifySerializer(serializers.ModelSerializer):
 
